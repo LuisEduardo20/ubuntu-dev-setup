@@ -43,7 +43,7 @@ sh startup.sh
 - [OBS Studio](https://obsproject.com/) - Free and open source software for video recording and live streaming
 - [Robo3t](https://robomongo.org/) - MongoDB GUI
 - [Bitwarden](https://bitwarden.com) - Bitwarden, the easiest way to secure all your passwords
-- [Lotion](https://github.com/puneetsl/lotion) - Unofficial Notion.so app for Linux
+- [Notion](https://www.notion.so/) - Snap Notion.so app for Linux
 - [LibreOffice](https://www.libreoffice.org/discover/libreoffice/) - LibreOffice is a powerful and free office suite
 - [Xournal](http://xournal.sourceforge.net) - Xournal is an application for notetaking, sketching, keeping a journal using a stylus.
 - [Telegram](https://telegram.org) - Free message app

@@ -193,9 +193,8 @@ sudo snap install robo3t-snap
 echo 'Installing Bitwarden'
 sudo snap install bitwarden
 
-echo 'Installing Lotion'
-sudo git clone https://github.com/puneetsl/lotion.git /usr/local/lotion
-cd /usr/local/lotion && sudo ./install.sh
+echo 'Installing Notion'
+sudo snap install notion-snap
 
 echo 'Installing LibreOffice'
 sudo snap install libreoffice
