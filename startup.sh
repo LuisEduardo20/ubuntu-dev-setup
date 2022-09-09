@@ -1,15 +1,15 @@
 echo "Welcome! Let's start setting up your system. It could take more than 10 minutes, be patient"
 
 echo "What name do you want to use in GIT user.name?"
-echo "For example, mine will be \"Luke Morales\""
+echo "For example, mine will be \"Luis Eduardo\""
 read git_config_user_name
 
 echo "What email do you want to use in GIT user.email?"
-echo "For example, mine will be \"lukemorales@live.com\""
+echo "For example, mine will be \"luiseduardo20.dev@gmail.com\""
 read git_config_user_email
 
 echo "What is your github username?"
-echo "For example, mine will be \"lukemorales\""
+echo "For example, mine will be \"luiseduardo20\""
 read username
 
 cd ~ && sudo apt-get update
@@ -108,8 +108,8 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt-get update && sudo apt-get install --no-install-recommends yarn
 echo '"--emoji" true' >> ~/.yarnrc
 
-echo 'Installing Typescript, AdonisJS CLI and Lerna'
-yarn global add typescript @adonisjs/cli lerna
+echo 'Installing Typescript and Lerna'
+yarn global add typescript lerna
 clear
 
 echo 'Installing VSCode'
@@ -152,11 +152,6 @@ echo 'Installing Heroku CLI'
 curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 heroku --version
 
-echo 'Installing PostBird'
-wget -c https://github.com/Paxa/postbird/releases/download/0.8.4/Postbird_0.8.4_amd64.deb
-sudo dpkg -i Postbird_0.8.4_amd64.deb
-sudo apt-get install -f -y && rm Postbird_0.8.4_amd64.deb
-
 echo 'Installing Insomnia Core and Omni Theme' 
 echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
   | sudo tee -a /etc/apt/sources.list.d/insomnia.list
@@ -166,23 +161,19 @@ sudo apt-get update && sudo apt-get install insomnia -y
 mkdir ~/.config/Insomnia/plugins && cd ~/.config/Insomnia/plugins
 git clone https://github.com/Rocketseat/insomnia-omni.git omni-theme && cd ~
 
-echo 'Installing Android Studio'
-sudo add-apt-repository ppa:maarten-fonville/android-studio -y
-sudo apt-get update && sudo apt-get install android-studio -y
-
 echo 'Installing VLC'
 sudo apt-get install vlc -y
 sudo apt-get install vlc-plugin-access-extra libbluray-bdj libdvdcss2 -y
+
+echo 'Installing DBeaver'
+wget -O - https://dbeaver.io/debs/dbeaver.gpg.key | sudo apt-key add -
+echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
+sudo apt-get update && sudo apt-get install dbeaver-ce
 
 echo 'Installing Discord'
 wget -O discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
 sudo dpkg -i discord.deb
 sudo apt-get install -f -y && rm discord.deb
-
-echo 'Installing Zoom'
-wget -c https://zoom.us/client/latest/zoom_amd64.deb
-sudo dpkg -i zoom_amd64.deb
-sudo apt-get install -f -y && rm zoom_amd64.deb
 
 echo 'Installing Spotify' 
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
@@ -196,17 +187,24 @@ sudo apt-get update && sudo apt-get install peek -y
 echo 'Installing OBS Studio'
 sudo apt-get install ffmpeg && sudo snap install obs-studio
 
-echo 'Enabling KVM for Android Studio'
-sudo apt-get install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager -y
-sudo adduser $USER libvirt
-sudo adduser $USER libvirt-qemu
-
 echo 'Installing Robo3t'
 sudo snap install robo3t-snap
+
+echo 'Installing Bitwarden'
+sudo snap install bitwarden
 
 echo 'Installing Lotion'
 sudo git clone https://github.com/puneetsl/lotion.git /usr/local/lotion
 cd /usr/local/lotion && sudo ./install.sh
+
+echo 'Installing LibreOffice'
+sudo snap install libreoffice
+
+echo 'Installing Xournal'
+sudo apt install xournal
+
+echo "Installing Telegram"
+sudo snap install telegram-desktop
 
 echo 'Updating and Cleaning Unnecessary Packages'
 sudo -- sh -c 'apt-get update; apt-get upgrade -y; apt-get full-upgrade -y; apt-get autoremove -y; apt-get autoclean -y'
